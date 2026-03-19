@@ -3,27 +3,27 @@ export const themeConfig = {
   // 站点信息
   siteMeta: {
     // 站点标题
-    title: "Curve",
+    title: "矛隼苑",
     // 站点描述
-    description: "Hello World",
+    description: "我们存在",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
-    site: "https://blog.imsyy.top",
+    site: "https://knotens.org",
     // 语言
     lang: "zh-CN",
     // 作者
     author: {
-      name: "Admin",
+      name: "海東青",
       cover: "/images/logo/logo.webp",
-      email: "114514@gmail.com",
+      email: "X@knotens.org",
       link: "https://www.imsyy.top",
     },
   },
   // 备案信息
-  icp: "萌ICP备114514号",
+  icp: "",
   // 建站日期
-  since: "2020-07-28",
+  since: "2026-03-19",
   // 每页文章数据
   postSize: 8,
   // inject
@@ -40,7 +40,7 @@ export const themeConfig = {
           rel: "alternate",
           type: "application/rss+xml",
           title: "RSS",
-          href: "https://blog.imsyy.top/rss.xml",
+          href: "https://knotens.org/rss.xml",
         },
       ],
       // 预载 CDN
@@ -159,61 +159,61 @@ export const themeConfig = {
         },
       ],
     },
-    {
-      name: "服务",
-      list: [
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
-          name: "起始页",
-          url: "https://nav.imsyy.top/",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
-          name: "今日热榜",
-          url: "https://hot.imsyy.top/",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
-          name: "站点监测",
-          url: "https://status.imsyy.top/",
-        },
-      ],
-    },
-    {
-      name: "项目",
-      list: [
-        {
-          icon: "/images/logo/logo.webp",
-          name: "Curve",
-          url: "https://github.com/imsyy/vitepress-theme-curve",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/07/66124f5fc63c8.png",
-          name: "SPlayer",
-          url: "https://github.com/imsyy/SPlayer",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
-          name: "Snavigation",
-          url: "https://github.com/imsyy/SPlayer",
-        },
-        {
-          icon: "/images/logo/logo.webp",
-          name: "Home",
-          url: "https://github.com/imsyy/home",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
-          name: "DailyHotApi",
-          url: "https://github.com/imsyy/DailyHotApi",
-        },
-        {
-          icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
-          name: "site-status",
-          url: "https://github.com/imsyy/site-status",
-        },
-      ],
-    },
+    // {
+    //   name: "服务",
+    //   list: [
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
+    //       name: "起始页",
+    //       url: "https://nav.imsyy.top/",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
+    //       name: "今日热榜",
+    //       url: "https://hot.imsyy.top/",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
+    //       name: "站点监测",
+    //       url: "https://status.imsyy.top/",
+    //     },
+    //   ],
+    // },
+    // {
+    //   name: "项目",
+    //   list: [
+    //     {
+    //       icon: "/images/logo/logo.webp",
+    //       name: "Curve",
+    //       url: "https://github.com/imsyy/vitepress-theme-curve",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/07/66124f5fc63c8.png",
+    //       name: "SPlayer",
+    //       url: "https://github.com/imsyy/SPlayer",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/6613465358077.png",
+    //       name: "Snavigation",
+    //       url: "https://github.com/imsyy/SPlayer",
+    //     },
+    //     {
+    //       icon: "/images/logo/logo.webp",
+    //       name: "Home",
+    //       url: "https://github.com/imsyy/home",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/661346d418ad7.png",
+    //       name: "DailyHotApi",
+    //       url: "https://github.com/imsyy/DailyHotApi",
+    //     },
+    //     {
+    //       icon: "https://pic.efefee.cn/uploads/2024/04/08/66134722586fa.png",
+    //       name: "site-status",
+    //       url: "https://github.com/imsyy/site-status",
+    //     },
+    //   ],
+    // },
   ],
   // 封面配置
   cover: {
@@ -227,10 +227,12 @@ export const themeConfig = {
       coverLayout: 'both',
       // 默认封面(随机展示)
       defaultCover: [
-        'https://example.com/1.avif',
-        'https://example.com/2.avif',
-        'https://example.com/3.avif'
-      ]
+        "https://w.wallhaven.cc/full/po/wallhaven-po2vg3.jpg",
+        "https://w.wallhaven.cc/full/d8/wallhaven-d8gygl.png",
+        "https://w.wallhaven.cc/full/ly/wallhaven-lywpjl.jpg",
+        "https://w.wallhaven.cc/full/8g/wallhaven-8gkdy2.jpg",
+        "https://w.wallhaven.cc/full/3q/wallhaven-3qwre9.jpg",
+      ],
     }
   },
   // 页脚信息
@@ -239,27 +241,19 @@ export const themeConfig = {
     social: [
       {
         icon: "email",
-        link: "mailto:one@imsyy.top",
+        link: "X@knotens.org",
       },
       {
         icon: "github",
-        link: "https://www.github.com/imsyy/",
-      },
-      {
-        icon: "telegram",
-        link: "https://t.me/bottom_user",
+        link: "https://github.com/PawnPony",
       },
       {
         icon: "bilibili",
-        link: "https://space.bilibili.com/98544142",
+        link: "https://space.bilibili.com/3691006933338814",
       },
       {
         icon: "qq",
-        link: "https://res.abeim.cn/api/qq/?qq=1539250352",
-      },
-      {
-        icon: "twitter-x",
-        link: "https://twitter.com/iimmsyy",
+        link: "https://res.abeim.cn/api/qq/?qq=3234557749",
       },
     ],
     // sitemap
@@ -342,7 +336,7 @@ export const themeConfig = {
     // 站点简介
     hello: {
       enable: true,
-      text: "这里有关于<strong>开发</strong>相关的问题和看法，也会有一些<strong>奇技淫巧</strong>的分享，其中大部分内容会侧重于<strong>前端开发</strong>。希望你可以在这里找到对你有用的知识和教程。",
+      text: "存放个人的文章",
     },
     // 目录
     toc: {
@@ -357,8 +351,8 @@ export const themeConfig = {
       enable: true,
       // 倒计时日期
       data: {
-        name: "春节",
-        date: "2025-01-29",
+        name: "新年",
+        date: "2027-01-01",
       },
     },
     // 站点数据
@@ -399,7 +393,7 @@ export const themeConfig = {
   },
   // 打赏
   rewardData: {
-    enable: true,
+    enable: false,
     // 微信二维码
     wechat: "https://pic.efefee.cn/uploads/2024/04/07/66121049d1e80.webp",
     // 支付宝二维码
