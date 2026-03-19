@@ -97,6 +97,15 @@ export const themeConfig = {
           rel: "stylesheet",
         },
       ],
+      // Noto Serif SC
+      [
+        "link",
+        {
+          crossorigin: "anonymous",
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap",
+        },
+      ],
       // 预载 DocSearch
       [
         "link",
