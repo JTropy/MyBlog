@@ -241,6 +241,13 @@ export const themeConfig = {
         "https://w.wallhaven.cc/full/ly/wallhaven-lywpjl.jpg",
         "https://w.wallhaven.cc/full/8g/wallhaven-8gkdy2.jpg",
         "https://w.wallhaven.cc/full/3q/wallhaven-3qwre9.jpg",
+        "https://w.wallhaven.cc/full/md/wallhaven-mdv8v1.jpg",
+        "https://w.wallhaven.cc/full/21/wallhaven-21d6g9.png",
+        "https://w.wallhaven.cc/full/og/wallhaven-og17j5.jpg",
+        "https://w.wallhaven.cc/full/ly/wallhaven-lyw2jq.png",
+        "https://w.wallhaven.cc/full/po/wallhaven-pow5y9.png",
+        "https://w.wallhaven.cc/full/7j/wallhaven-7j1vwy.png",
+        "https://w.wallhaven.cc/full/yq/wallhaven-yqe3ed.jpg",
       ],
     }
   },
