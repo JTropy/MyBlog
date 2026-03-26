@@ -247,7 +247,6 @@ export const themeConfig = {
         "https://w.wallhaven.cc/full/ly/wallhaven-lyw2jq.png",
         "https://w.wallhaven.cc/full/po/wallhaven-pow5y9.png",
         "https://w.wallhaven.cc/full/7j/wallhaven-7j1vwy.png",
-        "https://w.wallhaven.cc/full/yq/wallhaven-yqe3ed.jpg",
       ],
     }
   },
