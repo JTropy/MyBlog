@@ -7,7 +7,7 @@ export const themeConfig = {
     // 站点描述
     description: "你看的小说电影电视剧结束了吗？只要你还在想象，故事仍在继续。",
     // 站点logo
-    logo: "/images/logo/logo_new.png",
+    logo: "/images/logo/logo.svg",
     // 站点地址
     site: "https://knotens.org",
     // 语言
@@ -15,7 +15,7 @@ export const themeConfig = {
     // 作者
     author: {
       name: "京华",
-      cover: "/images/logo/logo_new.png",
+      cover: "/images/logo/logo.svg",
       email: "X@knotens.org",
       link: "https://github.com/PawnPony",
     },
@@ -32,7 +32,7 @@ export const themeConfig = {
     // https://vitepress.dev/zh/reference/site-config#head
     header: [
       // favicon
-      ["link", { rel: "icon", href: "/favicon.ico" }],
+      ["link", { rel: "icon", href: "/images/logo/logo.svg" }],
       // RSS
       [
         "link",
