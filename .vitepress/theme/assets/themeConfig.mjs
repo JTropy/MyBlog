@@ -3,9 +3,9 @@ export const themeConfig = {
   // 站点信息
   siteMeta: {
     // 站点标题
-    title: "矛隼苑",
+    title: "我们将在水草丰美之地重逢",
     // 站点描述
-    description: "我们存在",
+    description: "你看的小说电影电视剧结束了吗？只要你还在想象，故事仍在继续。",
     // 站点logo
     logo: "/images/logo/logo.webp",
     // 站点地址
@@ -14,10 +14,10 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "海東青",
+      name: "Vox",
       cover: "/images/logo/logo.webp",
       email: "X@knotens.org",
-      link: "https://www.imsyy.top",
+      link: "https://github.com/PawnPony",
     },
   },
   // 备案信息
