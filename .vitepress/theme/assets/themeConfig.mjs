@@ -14,7 +14,7 @@ export const themeConfig = {
     lang: "zh-CN",
     // 作者
     author: {
-      name: "Vox",
+      name: "京太",
       cover: "/images/logo/logo.webp",
       email: "X@knotens.org",
       link: "https://github.com/PawnPony",
