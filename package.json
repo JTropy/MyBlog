@@ -22,7 +22,8 @@
     "dev": "vitepress dev --host",
     "build": "vitepress build",
     "preview": "vitepress preview",
-    "deploy:vercel": "vercel deploy"
+    "deploy:vercel": "vercel deploy",
+    "up": "git add . && git commit -m \"update blog\" && git push"
   },
   "devDependencies": {
     "cheerio": "1.0.0-rc.12",
