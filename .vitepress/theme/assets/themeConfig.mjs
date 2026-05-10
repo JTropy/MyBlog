@@ -97,15 +97,6 @@ export const themeConfig = {
           rel: "stylesheet",
         },
       ],
-      // Noto Serif SC
-      [
-        "link",
-        {
-          crossorigin: "anonymous",
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap",
-        },
-      ],
       // 预载 DocSearch
       [
         "link",
@@ -132,21 +123,17 @@ export const themeConfig = {
       items: [
         { text: "技术分享", link: "/pages/categories/技术分享", icon: "technical" },
         { text: "我的项目", link: "/pages/project", icon: "code" },
-        { text: "效率工具", link: "/pages/tools", icon: "tools" },
       ],
     },
     {
       text: "友链",
       items: [
-        { text: "友链鱼塘", link: "/pages/friends", icon: "fish" },
         { text: "友情链接", link: "/pages/link", icon: "people" },
       ],
     },
     {
       text: "我的",
       items: [
-        { text: "畅所欲言", link: "/pages/message", icon: "chat" },
-        { text: "致谢名单", link: "/pages/thanks", icon: "reward" },
         { text: "关于本站", link: "/pages/about", icon: "contacts" },
       ],
     },
@@ -241,12 +228,6 @@ export const themeConfig = {
         "https://w.wallhaven.cc/full/ly/wallhaven-lywpjl.jpg",
         "https://w.wallhaven.cc/full/8g/wallhaven-8gkdy2.jpg",
         "https://w.wallhaven.cc/full/3q/wallhaven-3qwre9.jpg",
-        "https://w.wallhaven.cc/full/md/wallhaven-mdv8v1.jpg",
-        "https://w.wallhaven.cc/full/21/wallhaven-21d6g9.png",
-        "https://w.wallhaven.cc/full/og/wallhaven-og17j5.jpg",
-        "https://w.wallhaven.cc/full/ly/wallhaven-lyw2jq.png",
-        "https://w.wallhaven.cc/full/po/wallhaven-pow5y9.png",
-        "https://w.wallhaven.cc/full/7j/wallhaven-7j1vwy.png",
       ],
     }
   },
@@ -282,45 +263,23 @@ export const themeConfig = {
           { text: "文章归档", link: "/pages/archives", newTab: true },
         ],
       },
-      {
-        text: "项目",
-        items: [
-          { text: "Home", link: "https://github.com/imsyy/home/", newTab: true },
-          { text: "SPlayer", link: "https://github.com/imsyy/SPlayer/", newTab: true },
-          { text: "DailyHotApi", link: "https://github.com/imsyy/DailyHotApi/", newTab: true },
-          { text: "Snavigation", link: "https://github.com/imsyy/Snavigation/", newTab: true },
-        ],
-      },
+
       {
         text: "专栏",
         items: [
           { text: "技术分享", link: "/pages/categories/技术分享" },
           { text: "我的项目", link: "/pages/project" },
-          { text: "效率工具", link: "/pages/tools" },
         ],
       },
       {
         text: "页面",
         items: [
-          { text: "畅所欲言", link: "/pages/message" },
           { text: "关于本站", link: "/pages/about" },
           { text: "隐私政策", link: "/pages/privacy" },
           { text: "版权协议", link: "/pages/cc" },
         ],
       },
-      {
-        text: "服务",
-        items: [
-          { text: "站点状态", link: "https://status.imsyy.top/", newTab: true },
-          { text: "一个导航", link: "https://nav.imsyy.top/", newTab: true },
-          { text: "站点订阅", link: "https://blog.imsyy.top/rss.xml", newTab: true },
-          {
-            text: "反馈投诉",
-            link: "https://eqnxweimkr5.feishu.cn/share/base/form/shrcnCXCPmxCKKJYI3RKUfefJre",
-            newTab: true,
-          },
-        ],
-      },
+
     ],
   },
   // 评论
