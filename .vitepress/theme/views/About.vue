@@ -8,9 +8,9 @@
         <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
         <span class="text3">
-          喜欢“折腾”的实用主义者，关注技术与人文的交叉领域。<br/>
-          热爱开源、摄影与深度思考s，试图通过技术构建一个更有趣的世界。<br/>
-          
+          实用主义者，关注技术与人文的交叉领域。<br/>
+          喜欢“折腾”，对“掌控感”有高需求。<br/>
+          Win+Linux+Mac三持使用中
         </span>
       </div>
       <!-- 技能 -->
@@ -58,13 +58,13 @@
           --color: #7b3c25;
           background-image: url(/images/about/interest_music.png);
         "
-        @mouseenter="isMemoryActive = true"
-        @mouseleave="isMemoryActive = false"
+        @mouseenter="handleMusicEnter"
+        @mouseleave="handleMusicLeave"
       >
         <div class="image-content">
           <span class="tip">音乐偏好</span>
           <span class="title2">说唱、古风DJ、Funk<br/>流行乐、华语</span>
-          <div class="image-desc">
+          <div class="image-desc" style="text-align: right; width: 100%;">
             <span class="left">鼠标停留有彩蛋…</span>
           </div>
         </div>
@@ -138,6 +138,18 @@ import { onMounted, ref } from "vue";
 const { theme } = useData();
 const previewUrl = ref("");
 const isMemoryActive = ref(false);
+let memoryTimer = null;
+
+const handleMusicEnter = () => {
+  memoryTimer = setTimeout(() => {
+    isMemoryActive.value = true;
+  }, 2500); // 2.5s 延迟，让彩蛋不易被发现
+};
+
+const handleMusicLeave = () => {
+  if (memoryTimer) clearTimeout(memoryTimer);
+  isMemoryActive.value = false;
+};
 
 // 技能数据
 const skillsData = [
@@ -488,12 +500,14 @@ onMounted(() => {
     overflow: hidden;
 
     .memory-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 90%;
+      max-height: 85%;
+      object-fit: contain;
       opacity: 0;
-      filter: blur(20px) scale(1.2);
+      filter: blur(20px) scale(1.1);
       animation: imageReveal 10s forwards cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
     }
   }
 
