@@ -88,6 +88,8 @@
           <img src="/images/about/attachment.png" alt="Attachment" class="result-img" />
         </div>
       </div>
+    </div>
+
     <!-- 座右铭 -->
     <div class="about-content" style="grid-template-columns: 1fr">
       <div class="about-item">
