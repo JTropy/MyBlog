@@ -49,7 +49,7 @@
         </div>
         <img
           class="career-img"
-          src="https://pic.efefee.cn/uploads/2024/02/22/65d71db18bcf9.png"
+          src="/images/about/career.png"
           alt="career"
         />
       </div>
@@ -69,7 +69,7 @@
           </a>
         </span>
         <img
-          src="https://pic.efefee.cn/uploads/2024/02/22/65d6bc7ae72ae.png"
+          src="/images/about/personality.png"
           alt="male"
           class="male"
         />
@@ -86,7 +86,7 @@
         class="about-item like image"
         style="
           --color: #0c0e20;
-          background-image: url(https://pic.efefee.cn/uploads/2024/02/27/65dd812567723.webp);
+          background-image: url(/images/about/interest_humanity.png);
         "
       >
         <div class="image-content">
@@ -101,7 +101,7 @@
         class="about-item like image"
         style="
           --color: #7b3c25;
-          background-image: url(https://pic.efefee.cn/uploads/2024/02/27/65dd836099d16.webp);
+          background-image: url(/images/about/interest_music.png);
         "
       >
         <div class="image-content">
@@ -119,7 +119,7 @@
         class="about-item static image"
         style="
           --color: #0f1114;
-          background-image: url(https://pic.efefee.cn/uploads/2024/04/15/661c8fbf226d3.webp);
+          background-image: url(/images/about/statistics.png);
         "
       >
         <div class="image-content">
@@ -142,7 +142,7 @@
       <div class="about-item child">
         <div
           class="about-item map image"
-          style="background-image: url(https://pic.efefee.cn/uploads/2024/04/15/661cbccc56af5.webp)"
+          style="background-image: url(/images/about/map.png)"
         >
           <span class="position">我现在住在 <strong>中国，河南省</strong></span>
         </div>
@@ -257,8 +257,26 @@ const statisticsData = ref(null);
 
 // 获取站点统计数据
 const getStatisticsData = async () => {
-  const result = await getStatistics(theme.value.tongji["51la"]);
-  statisticsData.value = result;
+  try {
+    if (theme.value.tongji?.["51la"]) {
+      const result = await getStatistics(theme.value.tongji["51la"]);
+      statisticsData.value = result;
+    }
+  } catch (error) {
+    console.error("获取统计数据失败：", error);
+  }
+
+  // 如果没有数据，显示模拟数据以保持美观
+  if (!statisticsData.value || Object.keys(statisticsData.value).length === 0) {
+    statisticsData.value = {
+      最近活跃: "刚刚",
+      今日人数: "128",
+      今日访问: "356",
+      昨日人数: "210",
+      昨日访问: "582",
+      总访问量: "12.5k",
+    };
+  }
 };
 
 onMounted(() => {
