@@ -265,18 +265,6 @@ const getStatisticsData = async () => {
   } catch (error) {
     console.error("获取统计数据失败：", error);
   }
-
-  // 如果没有数据，显示模拟数据以保持美观
-  if (!statisticsData.value || Object.keys(statisticsData.value).length === 0) {
-    statisticsData.value = {
-      最近活跃: "刚刚",
-      今日人数: "128",
-      今日访问: "356",
-      昨日人数: "210",
-      昨日访问: "582",
-      总访问量: "12.5k",
-    };
-  }
 };
 
 onMounted(() => {
@@ -486,12 +474,18 @@ onMounted(() => {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s ease;
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 12px 24px -8px var(--main-border-shadow);
+        }
         .image-content {
           flex-grow: 1;
           display: flex;
           flex-direction: column;
           z-index: 2;
           color: #fff;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
           .image-desc {
             width: 100%;
             display: flex;
@@ -519,6 +513,7 @@ onMounted(() => {
           height: 100%;
           top: 0;
           left: 0;
+          background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
           box-shadow: inset 0 -70px 204px 10px var(--color);
           z-index: 0;
         }
@@ -534,42 +529,52 @@ onMounted(() => {
             flex-direction: column;
             .static-name {
               font-size: 15px;
-              opacity: 0.8;
+              opacity: 0.9;
             }
             .static-num {
               font-size: 34px;
               font-weight: bold;
+              background: linear-gradient(to bottom, #fff, #ccc);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
             }
           }
         }
       }
       &.map {
-        min-height: 170px;
-        background-size: 100%;
-        transition: background 1.5s ease-in-out;
+        min-height: 200px;
+        background-size: cover;
+        background-position: center;
+        transition: background-position 2s ease-in-out, transform 0.5s ease;
         cursor: pointer;
         @media (max-width: 768px) {
-          background-size: cover;
           pointer-events: none;
         }
         .position {
-          display: block;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           position: absolute;
           left: 0;
           bottom: 0;
           width: 100%;
-          padding: 20px 30px;
+          padding: 15px;
           color: #fff;
-          background-color: #636352;
-          font-size: 20px;
-          transition: bottom 1s;
+          background: rgba(99, 99, 82, 0.8);
+          backdrop-filter: blur(10px);
+          font-size: 18px;
+          transition: all 0.5s ease;
+          z-index: 2;
+          strong {
+            margin-left: 5px;
+            color: #ffeb3b;
+          }
         }
         &:hover {
-          background-size: 120%;
-          background-position-x: 0;
-          background-position-y: 36%;
+          background-position: center 20%;
           .position {
-            bottom: -80px;
+            background: rgba(99, 99, 82, 0.95);
+            padding-bottom: 25px;
           }
         }
       }
