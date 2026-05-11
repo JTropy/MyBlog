@@ -8,8 +8,8 @@
         <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
         <span class="text3">
-          实用主义者，关注技术与人文的交叉领域。<br/>
-          喜欢“折腾”，对“掌控感”有高需求。<br/>
+          实用主义者，关注技术与人文的交叉领域<br/>
+          喜欢“折腾”，对“掌控感”有高需求<br/>
           Win+Linux+Mac三持使用中
         </span>
       </div>
@@ -65,7 +65,7 @@
           <span class="tip">音乐偏好</span>
           <span class="title2">说唱、古风DJ、Funk<br/>流行乐、华语</span>
           <div class="image-desc" style="text-align: right; width: 100%;">
-            <span class="left">鼠标停留有彩蛋…</span>
+            <span class="left">鼠标悬停有彩蛋…</span>
           </div>
         </div>
       </div>
