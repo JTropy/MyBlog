@@ -1,10 +1,11 @@
 import { loadScript, loadCSS } from "./commonTools.mjs";
 
 const initComments = async (themeConfig) => {
+  let commentType = "";
   try {
     // 必要数据
     const option = themeConfig.comment;
-    const commentType = option.type;
+    commentType = option.type;
     if (!option.enable) return false;
     const server = option[commentType].server;
     console.log("开始加载", commentType, server);

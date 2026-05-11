@@ -1,5 +1,24 @@
 import { load } from "cheerio";
 
+const encodeBase64Url = (value) => {
+  if (typeof Buffer !== "undefined") {
+    return encodeURIComponent(Buffer.from(value, "utf-8").toString("base64"));
+  }
+  const bytes = new TextEncoder().encode(value);
+  let binary = "";
+  bytes.forEach((byte) => {
+    binary += String.fromCharCode(byte);
+  });
+  return encodeURIComponent(btoa(binary));
+};
+
+const withSafeRel = (value = "") => {
+  const rel = new Set(value.split(/\s+/).filter(Boolean));
+  rel.add("noopener");
+  rel.add("noreferrer");
+  return [...rel].join(" ");
+};
+
 /**
  * 从文件名生成数字 ID
  * @param {string} fileName - 文件名
@@ -98,7 +117,7 @@ export const jumpRedirect = (html, themeConfig, isDom = false) => {
   try {
     // 是否为开发环境
     const isDev = process.env.NODE_ENV === "development";
-    if (isDev) return false;
+    if (isDev) return isDom ? false : html;
     // 是否启用
     if (!themeConfig.jumpRedirect.enable) return html;
     // 中转页地址
@@ -121,12 +140,13 @@ export const jumpRedirect = (html, themeConfig, isDom = false) => {
           // 存在链接且非中转页
           if (linkHref && !linkHref.includes(redirectPage)) {
             // Base64
-            const encodedHref = btoa(linkHref);
+            const encodedHref = encodeBase64Url(linkHref);
             const redirectLink = `${redirectPage}?url=${encodedHref}`;
             // 保存原始链接
             link.setAttribute("original-href", linkHref);
             // 覆盖 href
             link.setAttribute("href", redirectLink);
+            link.setAttribute("rel", withSafeRel(link.getAttribute("rel") || ""));
           }
         }
       });
@@ -137,7 +157,6 @@ export const jumpRedirect = (html, themeConfig, isDom = false) => {
         const $a = $(el);
         const href = $a.attr("href");
         const classesStr = $a.attr("class");
-        const innerText = $a.text();
         // 检查是否包含排除的类
         const classes = classesStr ? classesStr.trim().split(" ") : [];
         if (excludeClass.some((className) => classes.includes(className))) {
@@ -146,20 +165,10 @@ export const jumpRedirect = (html, themeConfig, isDom = false) => {
         // 存在链接且非中转页
         if (href && !href.includes(redirectPage)) {
           // Base64 编码 href
-          const encodedHref = Buffer.from(href, "utf-8").toString("base64");
-          // 获取所有属性
-          const attributes = el.attribs;
-          // 重构属性字符串，保留原有属性
-          let attributesStr = "";
-          for (let attr in attributes) {
-            if (Object.prototype.hasOwnProperty.call(attributes, attr)) {
-              attributesStr += ` ${attr}="${attributes[attr]}"`;
-            }
-          }
-          // 构造新标签
-          const newLink = `<a href="${redirectPage}?url=${encodedHref}" original-href="${href}" ${attributesStr}>${innerText}</a>`;
-          // 替换原有标签
-          $a.replaceWith(newLink);
+          const encodedHref = encodeBase64Url(href);
+          $a.attr("original-href", href);
+          $a.attr("href", `${redirectPage}?url=${encodedHref}`);
+          $a.attr("rel", withSafeRel($a.attr("rel")));
         }
       });
       return $.html();
