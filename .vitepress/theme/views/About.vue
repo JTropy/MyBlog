@@ -4,23 +4,23 @@
     <div class="about-content" style="grid-template-columns: 3fr 2fr">
       <!-- 介绍 -->
       <div class="about-item hello">
-        <span class="text1">你好，很高兴认识你👋</span>
-        <span class="text2 title2">我是 無名</span>
-        <span class="text3">是一名 前端开发工程师、独立开发者、博主</span>
+        <span class="text1">来了就坐，不必客气。</span>
+        <span class="text2 title2">我是 京太</span>
+        <span class="text3">写代码，也写人间观察笔记。</span>
       </div>
       <!-- 追求 -->
       <div class="about-item pursuit">
         <span class="tip">追求</span>
-        <span class="title2">源于</span>
-        <span class="title2">热爱而去开发</span>
-        <span class="title2">优秀的作品</span>
+        <span class="title2">在秩序中</span>
+        <span class="title2">寻找自由，</span>
+        <span class="title2">在代码里安放灵魂</span>
       </div>
     </div>
     <div class="about-content" style="grid-template-columns: 2fr 3fr">
       <!-- 技能 -->
       <div class="about-item skills">
         <span class="tip">技能</span>
-        <span class="title2">开启创造力</span>
+        <span class="title2">工具是手的延伸</span>
         <div class="skills-list">
           <a
             v-for="(item, index) in skillsData"
@@ -41,7 +41,7 @@
       <div class="about-item career">
         <span class="tip">生涯</span>
         <span class="title2">
-          <i>無限進步</i>
+          <i>不断拆解，不断重建</i>
         </span>
         <div class="list">
           <span class="list-item" style="--color: #357ef5">ZZRVTC · 计算机应用技术</span>
@@ -58,14 +58,14 @@
       <!-- 性格 -->
       <div class="about-item character" style="--color: #4298b4">
         <span class="tip">性格</span>
-        <span class="title2">物流师</span>
-        <span class="title2" style="color: var(--color)">ISTJ-A / ISTJ-T</span>
+        <span class="title2">观察者</span>
+        <span class="title2" style="color: var(--color)">冷静，但不冷漠</span>
         <span class="more">
-          在
-          <a href="https://www.16personalities.com/ch/" target="_blank">16personalities</a>
-          了解更多关于
+          对世界保持
+          <a href="https://www.16personalities.com/ch/" target="_blank">好奇</a>
+          ，对人性保持
           <a href="https://www.16personalities.com/ch/istj-%E4%BA%BA%E6%A0%BC" target="_blank">
-            物流师
+            警惕
           </a>
         </span>
         <img
@@ -77,8 +77,8 @@
       <!-- 座右铭 -->
       <div class="about-item">
         <span class="tip">座右铭</span>
-        <span class="title1" style="margin-top: 20px">脚踏实地，</span>
-        <span class="title2">一丝不苟。</span>
+        <span class="title1" style="margin-top: 20px">怕什么真理无穷，</span>
+        <span class="title2">进一寸有一寸的欢喜。</span>
       </div>
     </div>
     <div class="about-content" style="grid-template-columns: 1fr 1fr">
@@ -91,9 +91,9 @@
       >
         <div class="image-content">
           <span class="tip">关注偏好</span>
-          <span class="title2">数码科技</span>
+          <span class="title2">人性与权力</span>
           <div class="image-desc">
-            <span class="left">手机、电脑及软硬件</span>
+            <span class="left">政治、历史、社会与技术的交叉地带</span>
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@
           <span class="tip">音乐偏好</span>
           <span class="title2">欧美、华语流行、纯音乐、ACG</span>
           <div class="image-desc">
-            <span class="left">一起欣赏更多音乐</span>
+            <span class="left">旋律是思想的另一种语言</span>
           </div>
         </div>
       </div>
@@ -162,15 +162,15 @@
     <div class="about-content" style="display: flex">
       <div class="about-item">
         <span class="tip">心路历程</span>
-        <span class="title2">为什么建站？</span>
+        <span class="title2">为什么记录？</span>
         <p class="text">
-          创建这个站的时候，想要就是能够有一个自己能够<strong>积累知识</strong>、<strong>积累兴趣</strong>的地方。和他人分享，会让这些成为<strong>积累和沉淀</strong>。如果能够帮助到更多的人，帮助更多人解决问题，那一定是非常棒的事情。
+          阅读是世界上杠杆最高的活动之一——投入一个工作天的时间，就能接触到最聪明的人已经研究透彻的东西。这个站点，就是我把<strong>阅读的杠杆</strong>落地的场所。
         </p>
         <p class="text">
-          这里大多都是<strong>技术向</strong>的文章，可能不太会有很多人看，权当是做个自我记录吧。当然，如果某篇文章能够帮助到你，那我也是很开心的。
+          这里不追求流量，不讨好算法。写技术，也写对世界的观察。符号和立场在吵架，但人类在相爱——我选择<strong>站在两者之间</strong>，记录、思考、拆解。
         </p>
         <p class="text">
-          这些就是创造这个小站的本意，<strong>也是我分享生活的方式</strong>。有幸能和你相遇在这里，相信我们能共同留下一段美好记忆。
+          做对的事情，再把事情做对。如果某篇文章恰好撞上了你的某段思考，那说明我们<strong>在各自的路上奔跑时遇见了</strong>。
         </p>
       </div>
     </div>
