@@ -272,6 +272,12 @@ export const themeConfig = {
         ],
       },
       {
+        text: "项目",
+        items: [
+          { text: "Hexagon", link: "https://github.com/JTropy/Hexagon", newTab: true },
+        ],
+      },
+      {
         text: "页面",
         items: [
           { text: "关于本站", link: "/pages/about" },
