@@ -18,7 +18,7 @@
   "type": "module",
   "scripts": {
     "format": "prettier --write .",
-    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.vue --fix",
+    "lint": "eslint . --ext .js --ext .jsx --ext .cjs --ext .mjs --ext .ts --ext .tsx --ext .cts --ext .mts --ext .vue --fix",
     "dev": "vitepress dev --host",
     "build": "vitepress build",
     "preview": "vitepress preview",
