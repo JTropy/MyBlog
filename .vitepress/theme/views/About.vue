@@ -4,19 +4,18 @@
     <div class="about-content" style="grid-template-columns: 3fr 2fr">
       <!-- 介绍 -->
       <div class="about-item hello">
-        <span class="text1">来了就坐，不必客气。</span>
+        <span class="text1">JTropy</span>
         <span class="text2 title2">我是 京太</span>
-        <span class="text3">写代码，也写人间观察笔记。</span>
+        <span class="text3">关注技术与人文的交叉领域</span>
       </div>
       <!-- 追求 -->
       <div class="about-item pursuit">
-        <span class="tip">追求</span>
-        <span class="title2">在秩序中</span>
-        <span class="title2">寻找自由，</span>
-        <span class="title2">在代码里安放灵魂</span>
+        <span class="tip">座右铭</span>
+        <span class="title2">怕什么真理无穷，</span>
+        <span class="title2">进一寸有一寸的欢喜。</span>
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 2fr 1.5fr">
+    <div class="about-content" style="grid-template-columns: 1fr">
       <!-- 技能 -->
       <div class="about-item skills">
         <span class="tip">技能</span>
@@ -37,26 +36,20 @@
           </a>
         </div>
       </div>
-      <!-- 座右铭 -->
-      <div class="about-item motto" style="justify-content: center">
-        <span class="tip">座右铭</span>
-        <span class="title1">怕什么真理无穷，</span>
-        <span class="title2">进一寸有一寸的欢喜。</span>
-      </div>
     </div>
     <!-- 测评分析 - 第一行 -->
     <div class="about-content" style="grid-template-columns: 1.5fr 1fr">
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
         <span class="title2">INTJ 建筑师</span>
-        <div class="result-img-wrapper">
+        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png'">
           <img src="http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png" alt="MBTI" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card cn-values" style="--color: #e91e63">
         <span class="tip">政治坐标</span>
         <span class="title2">社会自由主义</span>
-        <div class="result-img-wrapper">
+        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01aef80487e.png'">
           <img src="http://img.knotens.org/i/2026/05/11/6a01aef80487e.png" alt="CN Values" class="result-img" />
         </div>
       </div>
@@ -67,19 +60,18 @@
       <div class="about-item personality-card enneagram" style="--color: #3f51b5">
         <span class="tip">九型人格</span>
         <span class="title2">5w6 观察者</span>
-        <div class="result-img-wrapper">
+        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01b0b582ca6.png'">
           <img src="http://img.knotens.org/i/2026/05/11/6a01b0b582ca6.png" alt="Enneagram" class="result-img" />
         </div>
       </div>
       <div class="about-item personality-card attachment" style="--color: #00bcd4">
         <span class="tip">依恋类型</span>
         <span class="title2">回避型依恋</span>
-        <div class="result-img-wrapper">
+        <div class="result-img-wrapper" @click="previewUrl = 'http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png'">
           <img src="http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png" alt="Attachment" class="result-img" />
         </div>
       </div>
     </div>
-
 
     <div class="about-content" style="grid-template-columns: 1fr 1fr">
       <div
@@ -114,15 +106,26 @@
       </div>
     </div>
 
+    <!-- 图片预览遮罩 -->
+    <Transition name="fade">
+      <div v-if="previewUrl" class="image-preview-mask" @click="previewUrl = ''">
+        <div class="preview-content">
+          <img :src="previewUrl" alt="Preview" />
+          <div class="close-btn"><i class="iconfont icon-close"></i></div>
+        </div>
+      </div>
+    </Transition>
+
 
   </div>
 </template>
 
 <script setup>
 import { useData } from "vitepress";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 
 const { theme } = useData();
+const previewUrl = ref("");
 
 // 技能数据
 const skillsData = [
@@ -391,60 +394,6 @@ onMounted(() => {
           }
         }
       }
-      &.career {
-        .title2 {
-          letter-spacing: 0.2rem;
-          font-size: 40px;
-        }
-        .list {
-          margin-top: 12px;
-          display: flex;
-          flex-direction: column;
-          .list-item {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            margin-bottom: 12px;
-            color: var(--main-font-second-color);
-            &::before {
-              content: "";
-              display: block;
-              width: 16px;
-              height: 16px;
-              background-color: var(--color);
-              border-radius: 50%;
-              margin-right: 8px;
-            }
-          }
-        }
-        .career-img {
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 100%;
-          transition: transform 0.5s ease;
-          @media (max-width: 768px) {
-            position: static;
-          }
-        }
-        &:hover {
-          .career-img {
-            transform: scale(1.05) translateY(-5px);
-          }
-        }
-      }
-      &.game {
-        min-height: 300px;
-        @media (max-width: 768px) {
-          min-height: 240px;
-        }
-      }
-      &.like {
-        min-height: 400px;
-        @media (max-width: 768px) {
-          min-height: 300px;
-        }
-      }
       &.image {
         background-position: center;
         background-size: cover;
@@ -472,17 +421,6 @@ onMounted(() => {
             align-items: center;
             justify-content: space-between;
             margin-top: auto;
-            &.opacity {
-              font-size: 14px;
-              color: #eee;
-              opacity: 0.8;
-              a {
-                color: #eee;
-                &:hover {
-                  color: var(--main-color);
-                }
-              }
-            }
           }
         }
         &::after {
@@ -498,7 +436,6 @@ onMounted(() => {
           transition: all 0.5s ease;
         }
       }
-
     }
     &:last-child {
       margin-bottom: 0;
@@ -508,5 +445,70 @@ onMounted(() => {
       flex-direction: column;
     }
   }
+}
+
+// 预览遮罩
+.image-preview-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  padding: 40px;
+
+  .preview-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+      transform-origin: center;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
