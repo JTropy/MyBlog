@@ -113,51 +113,7 @@
         </div>
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 2fr 3fr">
-      <!-- 数据 -->
-      <div
-        class="about-item static image"
-        style="
-          --color: #0f1114;
-          background-image: url(/images/about/statistics.png);
-        "
-      >
-        <div class="image-content">
-          <span class="tip">数据</span>
-          <span class="title2">访问统计</span>
-          <div class="static-data">
-            <div v-for="(item, key, index) in statisticsData" :key="index" class="static-item">
-              <span class="static-name">{{ key }}</span>
-              <span class="static-num">{{ item }}</span>
-            </div>
-          </div>
-          <div class="image-desc opacity">
-            <span class="left">
-              统计信息来自 <a href="https://v6.51.la/" target="_blank">51la</a>
-            </span>
-          </div>
-        </div>
-      </div>
-      <!-- 信息 -->
-      <div class="about-item child">
-        <div
-          class="about-item map image"
-          style="background-image: url(/images/about/map.png)"
-        >
-          <span class="position">我现在住在 <strong>中国，河南省</strong></span>
-        </div>
-        <div class="about-item info">
-          <div class="info-item">
-            <span class="info-name">生于</span>
-            <span class="info-num" style="--color: #43a6c6">2001</span>
-          </div>
-          <div class="info-item">
-            <span class="info-name">现在职业</span>
-            <span class="info-num" style="--color: #dfac46">前端开发工程师</span>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- 心路历程 -->
     <div class="about-content" style="display: flex">
       <div class="about-item">
@@ -178,7 +134,7 @@
 </template>
 
 <script setup>
-import { getStatistics } from "@/api";
+import { useData } from "vitepress";
 
 const { theme } = useData();
 
@@ -252,31 +208,7 @@ const skillsData = [
   },
 ];
 
-// 站点统计数据
-const statisticsData = ref({
-  最近活跃: "100",
-  今日人数: "500",
-  今日访问: "10,000",
-  昨日人数: "486",
-  昨日访问: "9,952",
-  本月访问: "325,014",
-  总访问量: "6,252,348",
-});
-
-// 获取站点统计数据
-const getStatisticsData = async () => {
-  // try {
-  //   if (theme.value.tongji?.["51la"]) {
-  //     const result = await getStatistics(theme.value.tongji["51la"]);
-  //     statisticsData.value = result;
-  //   }
-  // } catch (error) {
-  //   console.error("获取统计数据失败：", error);
-  // }
-};
-
 onMounted(() => {
-  getStatisticsData();
 });
 </script>
 
@@ -526,86 +458,7 @@ onMounted(() => {
           z-index: 0;
         }
       }
-      &.static {
-        .static-data {
-          display: grid;
-          gap: 12px;
-          grid-template-columns: 1fr 1fr;
-          margin: 20px 0;
-          .static-item {
-            display: flex;
-            flex-direction: column;
-            .static-name {
-              font-size: 15px;
-              opacity: 0.9;
-            }
-            .static-num {
-              font-size: 34px;
-              font-weight: bold;
-              background: linear-gradient(to bottom, #fff, #ccc);
-              -webkit-background-clip: text;
-              -webkit-text-fill-color: transparent;
-            }
-          }
-        }
-      }
-      &.map {
-        min-height: 200px;
-        background-size: cover;
-        background-position: center;
-        transition: background-position 2s ease-in-out, transform 0.5s ease;
-        cursor: pointer;
-        @media (max-width: 768px) {
-          pointer-events: none;
-        }
-        .position {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          padding: 15px;
-          color: #fff;
-          background: rgba(99, 99, 82, 0.8);
-          backdrop-filter: blur(10px);
-          font-size: 18px;
-          transition: all 0.5s ease;
-          z-index: 2;
-          strong {
-            margin-left: 5px;
-            color: #ffeb3b;
-          }
-        }
-        &:hover {
-          background-position: center 20%;
-          .position {
-            background: rgba(99, 99, 82, 0.95);
-            padding-bottom: 25px;
-          }
-        }
-      }
-      &.info {
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-start;
-        .info-item {
-          display: flex;
-          flex-direction: column;
-          margin-right: 32px;
-          .info-name {
-            font-size: 14px;
-            margin-bottom: 8px;
-            color: var(--main-font-second-color);
-          }
-          .info-num {
-            font-size: 34px;
-            font-weight: bold;
-            color: var(--color);
-          }
-        }
-      }
+
     }
     &:last-child {
       margin-bottom: 0;
