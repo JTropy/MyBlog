@@ -16,7 +16,7 @@
         <span class="title2">在代码里安放灵魂</span>
       </div>
     </div>
-    <div class="about-content" style="grid-template-columns: 1fr">
+    <div class="about-content" style="grid-template-columns: 2fr 1.5fr">
       <!-- 技能 -->
       <div class="about-item skills">
         <span class="tip">技能</span>
@@ -37,12 +37,18 @@
           </a>
         </div>
       </div>
+      <!-- 座右铭 -->
+      <div class="about-item motto" style="justify-content: center">
+        <span class="tip">座右铭</span>
+        <span class="title1">怕什么真理无穷，</span>
+        <span class="title2">进一寸有一寸的欢喜。</span>
+      </div>
     </div>
     <!-- 测评分析 - 第一行 -->
     <div class="about-content" style="grid-template-columns: 1.5fr 1fr">
       <div class="about-item personality-card mbti" style="--color: #4298b4">
         <span class="tip">MBTI 认知功能</span>
-        <span class="title2">ISTJ 观察者</span>
+        <span class="title2">INTJ 建筑师</span>
         <div class="result-img-wrapper">
           <img src="http://img.knotens.org/i/2026/05/11/6a01aeece9c1e.png" alt="MBTI" class="result-img" />
         </div>
@@ -67,21 +73,14 @@
       </div>
       <div class="about-item personality-card attachment" style="--color: #00bcd4">
         <span class="tip">依恋类型</span>
-        <span class="title2">回避型 / 冷漠型</span>
+        <span class="title2">回避型依恋</span>
         <div class="result-img-wrapper">
           <img src="http://img.knotens.org/i/2026/05/11/6a01b04e9afaf.png" alt="Attachment" class="result-img" />
         </div>
       </div>
     </div>
 
-    <!-- 座右铭 -->
-    <div class="about-content" style="grid-template-columns: 1fr">
-      <div class="about-item">
-        <span class="tip">座右铭</span>
-        <span class="title1" style="margin-top: 20px">怕什么真理无穷，</span>
-        <span class="title2">进一寸有一寸的欢喜。</span>
-      </div>
-    </div>
+
     <div class="about-content" style="grid-template-columns: 1fr 1fr">
       <div
         class="about-item like image"
@@ -276,26 +275,38 @@ onMounted(() => {
           }
         }
       }
+      &.motto {
+        .title1 {
+          font-size: 28px !important;
+          opacity: 0.8;
+          margin-bottom: 8px;
+        }
+        .title2 {
+          font-size: 24px !important;
+          margin-right: 0;
+          color: var(--main-font-color);
+        }
+      }
       &.personality-card {
         min-height: 280px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
         .result-img-wrapper {
           position: absolute;
-          right: -30px;
-          bottom: -20px;
-          width: 70%;
-          height: 180px;
-          border-radius: 12px;
+          right: -10px;
+          bottom: -5px;
+          width: 85%;
+          height: 210px;
+          border-radius: 4px;
           overflow: hidden;
-          box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.5);
-          transform: rotate(-8deg) translateY(20px);
+          transform: rotate(-2deg) translateY(5px);
           transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          background-color: rgba(0, 0, 0, 0.2);
+          filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
           .result-img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: right bottom;
             transition: transform 0.6s ease;
           }
         }
@@ -309,15 +320,15 @@ onMounted(() => {
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
           }
           .result-img-wrapper {
-            transform: rotate(0deg) translateY(-10px) scale(1.05);
-            right: 20px;
-            bottom: 20px;
-            width: 80%;
-            height: 200px;
+            transform: rotate(0deg) translateY(-5px) scale(1.02);
+            right: 10px;
+            bottom: 10px;
+            width: 90%;
+            height: 220px;
             z-index: 10;
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
             .result-img {
-              transform: scale(1.1);
+              transform: scale(1.05);
             }
           }
         }
