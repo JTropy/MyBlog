@@ -12,6 +12,22 @@
         </a>
 
       </div>
+      <a
+        v-if="theme.footer?.notByAi?.enable"
+        class="not-by-ai link"
+        :href="theme.footer.notByAi.href"
+        :aria-label="theme.footer.notByAi.alt"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="not-by-ai-img"
+          :src="theme.footer.notByAi.img"
+          :alt="theme.footer.notByAi.alt"
+          width="131"
+          height="42"
+        />
+      </a>
       <div class="meta">
         <a class="power link" href="https://vitepress.dev/" target="_blank">
           <span class="by">Powered by</span>
@@ -170,8 +186,38 @@ onBeforeUnmount(() => {
         }
       }
     }
+    .not-by-ai {
+      flex-shrink: 0;
+      height: 42px;
+      margin: 0 8px;
+      padding: 0;
+      overflow: visible;
+      background-color: transparent;
+      border-radius: 0;
+      .not-by-ai-img {
+        display: block;
+        width: 131px;
+        height: 42px;
+      }
+      &:hover {
+        background-color: transparent;
+        transform: translateY(-1px);
+      }
+    }
     @media (max-width: 768px) {
+      justify-content: center;
       font-size: 14px;
+      gap: 0.4rem;
+      text-align: center;
+      .copyright {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .not-by-ai {
+        margin: 0.25rem 0;
+      }
       .meta {
         display: none;
       }

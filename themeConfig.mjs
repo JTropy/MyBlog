@@ -229,6 +229,13 @@ export const themeConfig = {
   },
   // 页脚信息
   footer: {
+    // Not By AI 徽章
+    notByAi: {
+      enable: true,
+      href: "https://notbyai.fyi/hi/not-by-ai",
+      img: "/images/badges/written-by-human-not-by-ai-white.svg",
+      alt: "Written By Human, Not By AI",
+    },
     // 社交链接（请确保为偶数个）
     social: [
       {
@@ -402,6 +409,7 @@ export const themeConfig = {
       "skills-item",
       "right-menu-link",
       "link-card",
+      "not-by-ai",
     ],
   },
   // 站点统计
