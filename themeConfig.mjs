@@ -5,7 +5,7 @@ export const themeConfig = {
     // 站点标题
     title: "京华",
     // 站点描述
-    description: "你看的小说电影电视剧结束了吗？只要你还在想象，故事仍在继续。",
+    description: "凡此过往，皆为序章。",
     // 站点logo
     logo: "/images/logo/logo.svg",
     // 站点地址

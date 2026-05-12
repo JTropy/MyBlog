@@ -9,7 +9,7 @@
       @click="toPost(item.regularPath)"
     >
       <div v-if="!simple && showCover(item)" class="post-cover">
-        <img :src="getCover(item)" :alt="item.title">
+        <img :src="getCover(item)" :alt="item.title" @error="coverError(item)">
       </div>
       
       <div class="post-content">
@@ -69,6 +69,8 @@ const props = defineProps({
 
 const { theme: themeConfig } = useData()
 
+const failedCoverKeys = ref(new Set())
+
 // 计算布局类型
 const layoutType = computed(() => 
   themeConfig.value?.cover?.twoColumns ? 'twoColumns' : themeConfig.value?.cover?.showCover?.coverLayout ?? 'left'
@@ -83,7 +85,10 @@ const gridStyle = computed(() =>
 )
 
 // 判断是否显示封面
-const showCover = (item) => themeConfig.value?.cover?.showCover?.enable && Boolean(item?.cover)
+const showCover = (item) =>
+  themeConfig.value?.cover?.showCover?.enable &&
+  Boolean(item?.cover) &&
+  !failedCoverKeys.value.has(getCoverKey(item))
 
 // 获取封面图片
 const getCover = (item) => {
@@ -91,6 +96,17 @@ const getCover = (item) => {
   
   if (!cover?.showCover?.enable) return false
   return item?.cover || false
+}
+
+const getCoverKey = (item) => item?.id ?? item?.regularPath ?? item?.cover ?? item?.title
+
+const coverError = (item) => {
+  const key = getCoverKey(item)
+  if (!key) return
+
+  const nextFailedCoverKeys = new Set(failedCoverKeys.value)
+  nextFailedCoverKeys.add(key)
+  failedCoverKeys.value = nextFailedCoverKeys
 }
 
 // 前往文章
