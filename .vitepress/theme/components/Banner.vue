@@ -180,20 +180,20 @@ onBeforeUnmount(() => {
     padding: 0 0.12em 0.08em;
     color: transparent;
     font-family: var(--main-font-family);
-    font-size: clamp(3.8rem, 10vw, 7.5rem);
+    font-size: clamp(2.75rem, 6vw, 4.6rem);
     font-weight: 900;
     line-height: 0.9;
     background:
-      linear-gradient(120deg, rgba(255, 255, 255, 0.96) 0 24%, rgba(255, 255, 255, 0) 25% 36%, rgba(255, 255, 255, 0.75) 37% 44%, rgba(255, 255, 255, 0) 45%),
-      linear-gradient(150deg, #fff8dc 0%, #f5d06f 32%, #f2994a 56%, #bf6bff 78%, #63d7ff 100%);
+      linear-gradient(120deg, rgba(255, 255, 255, 0.86) 0 18%, rgba(255, 255, 255, 0) 19% 44%, rgba(255, 255, 255, 0.42) 45% 50%, rgba(255, 255, 255, 0) 51%),
+      linear-gradient(150deg, #fff7df 0%, #e4c46c 42%, #b88737 100%);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.72);
+    -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.58);
     text-shadow:
-      0 2px 0 rgba(255, 255, 255, 0.65),
-      0 10px 20px rgba(0, 0, 0, 0.34),
-      0 0 34px rgba(242, 185, 75, 0.36);
-    transform: skew(-5deg);
+      0 1px 0 rgba(255, 255, 255, 0.5),
+      0 7px 15px rgba(0, 0, 0, 0.28),
+      0 0 18px rgba(242, 185, 75, 0.2);
+    transform: skew(-2deg);
   }
   .site-title-art::before,
   .site-title-art::after {
@@ -205,9 +205,9 @@ onBeforeUnmount(() => {
   .site-title-art::before {
     z-index: -1;
     color: transparent;
-    -webkit-text-stroke: 10px rgba(223, 172, 70, 0.18);
-    filter: blur(0.5px);
-    transform: translate(0.055em, 0.065em);
+    -webkit-text-stroke: 5px rgba(223, 172, 70, 0.1);
+    filter: blur(0.35px);
+    transform: translate(0.04em, 0.05em);
   }
   .site-title-art::after {
     z-index: 1;
@@ -215,7 +215,7 @@ onBeforeUnmount(() => {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 48%);
     background-clip: text;
     -webkit-background-clip: text;
-    opacity: 0.45;
+    opacity: 0.28;
   }
   .subtitle {
     width: 80%;
@@ -255,7 +255,7 @@ onBeforeUnmount(() => {
     }
     .site-title-art {
       max-width: 100%;
-      font-size: clamp(3.25rem, 18vw, 4.25rem);
+      font-size: clamp(2.5rem, 13vw, 3.25rem);
       transform-origin: left center;
     }
     .subtitle {
