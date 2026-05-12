@@ -4,7 +4,7 @@
         <title>京华</title>
         <link>https://knotens.org</link>
         <description>凡此过往，皆为序章。</description>
-        <lastBuildDate>Tue, 12 May 2026 12:02:41 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 May 2026 12:48:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>京华</generator>
         <language>zh</language>
@@ -14,6 +14,7 @@
             <link>https://knotens.org/posts/常见逻辑谬误</link>
             <guid>https://knotens.org/posts/常见逻辑谬误</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[梳理高频逻辑谬误，帮自己识别无效争论。]]></description>
             <author>X@knotens.org (京华)</author>
         </item>
         <item>
@@ -21,13 +22,15 @@
             <link>https://knotens.org/posts/简中互联网七诫</link>
             <guid>https://knotens.org/posts/简中互联网七诫</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[整理中文互联网讨论里值得坚持的七条思考准则。]]></description>
             <author>X@knotens.org (京华)</author>
         </item>
         <item>
-            <title><![CDATA[自我介绍]]></title>
+            <title><![CDATA[你好，认识一下！]]></title>
             <link>https://knotens.org/posts/自我介绍</link>
             <guid>https://knotens.org/posts/自我介绍</guid>
             <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[关于技术、人文与表达习惯的一点自我介绍。]]></description>
             <author>X@knotens.org (京华)</author>
         </item>
     </channel>
