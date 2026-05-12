@@ -1,11 +1,6 @@
 <template>
   <div v-if="type === 'text'" :class="['banner', bannerType]" id="main-banner">
-    <h1 class="title">
-      <span class="title-prefix">你好，欢迎来到</span>
-      <span class="site-title-art" :data-text="theme.siteMeta.title">
-        {{ theme.siteMeta.title }}
-      </span>
-    </h1>
+    <h1 class="title">你好，欢迎来到{{ theme.siteMeta.title }}</h1>
     <div class="subtitle">
       <Transition name="fade" mode="out-in">
         <span :key="hitokotoData?.hitokoto" class="text">
@@ -154,68 +149,9 @@ onBeforeUnmount(() => {
     }
   }
   .title {
-    position: relative;
-    width: min(100%, 980px);
-    padding: 0 1rem;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    justify-content: center;
-    gap: 0.25rem 0.75rem;
-    font-family: var(--main-font-family);
+    font-family: "Site Title";
     font-weight: bold;
-    line-height: 1.05;
-    text-align: center;
-  }
-  .title-prefix {
-    font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--main-font-color);
-    text-shadow: 0 8px 28px var(--main-dark-shadow);
-  }
-  .site-title-art {
-    position: relative;
-    display: inline-block;
-    isolation: isolate;
-    padding: 0 0.12em 0.08em;
-    color: transparent;
-    font-family: var(--main-font-family);
-    font-size: clamp(2.75rem, 6vw, 4.6rem);
-    font-weight: 900;
-    line-height: 0.9;
-    background:
-      linear-gradient(120deg, rgba(255, 255, 255, 0.86) 0 18%, rgba(255, 255, 255, 0) 19% 44%, rgba(255, 255, 255, 0.42) 45% 50%, rgba(255, 255, 255, 0) 51%),
-      linear-gradient(150deg, #fff7df 0%, #e4c46c 42%, #b88737 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-stroke: 0.6px rgba(255, 255, 255, 0.58);
-    text-shadow:
-      0 1px 0 rgba(255, 255, 255, 0.5),
-      0 7px 15px rgba(0, 0, 0, 0.28),
-      0 0 18px rgba(242, 185, 75, 0.2);
-    transform: skew(-2deg);
-  }
-  .site-title-art::before,
-  .site-title-art::after {
-    position: absolute;
-    inset: 0;
-    content: attr(data-text);
-    pointer-events: none;
-  }
-  .site-title-art::before {
-    z-index: -1;
-    color: transparent;
-    -webkit-text-stroke: 5px rgba(223, 172, 70, 0.1);
-    filter: blur(0.35px);
-    transform: translate(0.04em, 0.05em);
-  }
-  .site-title-art::after {
-    z-index: 1;
-    color: transparent;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 48%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    opacity: 0.28;
+    font-size: 2.75rem;
   }
   .subtitle {
     width: 80%;
@@ -244,19 +180,7 @@ onBeforeUnmount(() => {
     align-items: flex-start;
     height: 240px;
     .title {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 0 8px;
-      gap: 0.15rem;
-    }
-    .title-prefix {
-      font-size: 2.05rem;
-    }
-    .site-title-art {
-      max-width: 100%;
-      font-size: clamp(2.5rem, 13vw, 3.25rem);
-      transform-origin: left center;
+      font-size: 2.25rem;
     }
     .subtitle {
       height: 50px;
