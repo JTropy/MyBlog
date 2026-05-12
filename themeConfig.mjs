@@ -319,7 +319,7 @@ export const themeConfig = {
     // 站点简介
     hello: {
       enable: true,
-      text: "个人文章存档，内容不设限：<br>技术是饭碗，<br>人文是爱好，<br>政治是忍不住。",
+      text: "个人文章存档，内容不限：<br><strong>技术</strong>是饭碗，<br><strong>人文</strong>是爱好，<br><strong>政治</strong>是忍不住。",
     },
     // 目录
     toc: {
